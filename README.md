@@ -4,8 +4,6 @@ This repository contains a LaTeX template, mainly intended for for creating Old
 School Revival (OSR) Tabletop Role-Playing Game Zines. This does not mean the
 template can not be used for other purposes.
 
-![example screenshot](./_example/example01.jpg)
-
 ## Features
 
 - A4 paper size.
@@ -39,6 +37,9 @@ compiling.
 2. Open the `Main.tex` file in your preferred LaTeX editor.
 3. Replace the contents with your own.
 5. Compile the `.tex` file.
+
+## Example
+![example screenshot](./_example/example01.jpg)
 
 ## License
 
