@@ -1,0 +1,69 @@
+\documentclass[a4paper,14pt,twoside]{extarticle} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{lipsum} % For generating dummy text. Remove in your document
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage[nf]{coelacanth}
+\usepackage[T1]{fontenc}
+%% The font package uses mweights.sty which has som issues with the
+%% \normalfont command. The following two lines fixes this issue.
+\let\oldnormalfont\normalfont
+\def\normalfont{\oldnormalfont\mdseries}
+
+% Adjust the margins to fit each page on half of an A4 page
+\geometry{
+  paper=a4paper, % Change to letterpaper for US letter
+  inner=2.5cm, % Inner margin
+  outer=1.5cm, % Outer margin
+  top=2cm, % Top margin
+  bottom=2cm, % Bottom margin
+  footskip=0.9cm % Space for the page number
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\hrulefill \quad Your Zine Title \quad \hrulefill}
+\fancyfoot[C]{\hrulefill \quad \textbf{\thepage} \quad \hrulefill}
+
+\setlength{\columnsep}{0.6cm}
+
+\title{\vspace{-3cm} \hrule \vspace{2mm} \textbf{\textit{Your Zine Title}} \vspace{2mm} \hrule}
+\author{\textit{Your Name}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\hrule \vspace{2mm}
+This is an abstract for your zine. Here you give an overview of your zine.
+\vspace{2mm} \hrule
+\end{abstract}
+
+\begin{multicols}{2}
+
+\section{Introduction}
+
+\lipsum[1] % generates dummy text. Replace \lipsum commands with your own text
+
+\section{Rules}
+
+\lipsum[2-4]
+
+\section{Monsters}
+
+\lipsum[5-7]
+
+\section{Adventures}
+
+\lipsum[8-10]
+
+\end{multicols}
+
+\end{document}
+
