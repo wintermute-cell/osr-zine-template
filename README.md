@@ -4,7 +4,7 @@ This repository contains a LaTeX template, mainly intended for for creating Old
 School Revival (OSR) Tabletop Role-Playing Game Zines. This does not mean the
 template can not be used for other purposes.
 
-![example screenshot](./example/example01.jpg)
+![example screenshot](./_example/example01.jpg)
 
 ## Features
 
