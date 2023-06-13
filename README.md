@@ -4,6 +4,8 @@ This repository contains a LaTeX template, mainly intended for for creating Old
 School Revival (OSR) Tabletop Role-Playing Game Zines. This does not mean the
 template can not be used for other purposes.
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/winterv)
+
 ## Features
 
 - A4 paper size.
