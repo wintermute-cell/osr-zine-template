@@ -21,12 +21,19 @@ template can not be used for other purposes.
 This template uses the following LaTeX packages:
 
 - `extarticle` for the document class.
-- `inputenc` and `fontenc` for special character support.
+- `inputenc` and `fontenc` for special character and font encoding support.
 - `graphicx` for including graphics.
 - `lipsum` for generating dummy text.
 - `fancyhdr` for custom headers and footers.
 - `multicol` for multi-column layout.
 - `geometry` for setting page dimensions and margins.
+- `tabularx` for more flexible table layouts.
+- `titlesec` for customizing section titles.
+- `enumitem` for customizable list environments.
+- `float` for improved interface for floating objects.
+- `hyperref` for creating hyperlinks in the document.
+- `xcolor` with the `table` option for coloring tables.
+- `pifont` for accessing the Pi font symbols.
 - `coelacanth` for the main document font.
 
 If you use a common LaTeX distibution, these packages are most likely already
