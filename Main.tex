@@ -1,3 +1,4 @@
+% ltex: language=en-US
 \documentclass[a4paper,14pt,twoside]{extarticle} 
 
 \usepackage[utf8]{inputenc}
@@ -7,6 +8,14 @@
 \usepackage{fancyhdr}
 \usepackage{multicol}
 \usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[table]{xcolor}
+
+\usepackage{pifont}
 \usepackage[nf]{coelacanth}
 \usepackage[T1]{fontenc}
 %% The font package uses mweights.sty which has som issues with the
@@ -14,26 +23,59 @@
 \let\oldnormalfont\normalfont
 \def\normalfont{\oldnormalfont\mdseries}
 
+
 % Adjust the margins to fit each page on half of an A4 page
 \geometry{
-  paper=a4paper, % Change to letterpaper for US letter
-  inner=2.5cm, % Inner margin
-  outer=1.5cm, % Outer margin
-  top=2cm, % Top margin
-  bottom=2cm, % Bottom margin
-  footskip=0.9cm % Space for the page number
+    paper=a4paper, % Change to letterpaper for US letter
+    inner=2.5cm, % Inner margin
+    outer=1.5cm, % Outer margin
+    top=2cm, % Top margin
+    bottom=2cm, % Bottom margin
+    footskip=0.9cm % Space for the page number
 }
 
+\setlist[itemize]{topsep=0pt,itemsep=0.1cm,partopsep=1ex,parsep=1ex}
+\setlist[itemize]{leftmargin=0.78cm} % you might have to adjust this based on 
+                                     % the chosen symbol
+
+% you can adjust the properties of an individual itemize like this:
+% \begin{itemize}[leftmargin=5.5mm]
+
+% spacings around sections and (sub-)subsections
+\titlespacing*{\section}
+{0pt}{0.4cm}{0.1cm}
+\titlespacing*{\subsection}
+{0pt}{0.2cm}{0.2cm}
+\titlespacing*{\subsubsection}
+{0pt}{8pt}{2pt}
+
+% Prevent breaking mid-word
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% Give tables more padding
+\renewcommand{\arraystretch}{1.3}
+
+% Middle split size
+\setlength{\columnsep}{0.8cm}
+
+% Boxes with darkened background
+\newcommand{\colbox}[1]{ \noindent\colorbox{gray!25}{\parbox{0.93\linewidth}{#1}}\vspace{0.2cm}} 
+\setlength\fboxsep{0.3cm} % Padding
+
+% FOOT & HEAD
+\def\zinetitle{Your Zine Title}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\hrulefill \quad Your Zine Title \quad \hrulefill}
+\fancyhead[LE,RO]{\hrulefill \quad \zinetitle \quad \hrulefill}
 \fancyfoot[C]{\hrulefill \quad \textbf{\thepage} \quad \hrulefill}
 
-\setlength{\columnsep}{0.6cm}
-
-\title{\vspace{-3cm} \hrule \vspace{2mm} \textbf{\textit{Your Zine Title}} \vspace{2mm} \hrule}
-\author{\textit{Your Name}}
-\date{\today}
+% TITLE
+\title{\vspace{-3cm} \hrule \vspace{2mm} \textbf{\textit{\zinetitle}} \vspace{2mm} \hrule}
+\author{\textit{Written by YOURNAME}}
+\date{Last edit: \today}
 
 \begin{document}
 
@@ -41,29 +83,106 @@
 
 \begin{abstract}
 \hrule \vspace{2mm}
-This is an abstract for your zine. Here you give an overview of your zine.
+\begin{center}
+    \lipsum[10]
+\end{center}
 \vspace{2mm} \hrule
 \end{abstract}
 
-\begin{multicols}{2}
-
 \section{Introduction}
+    \lipsum[2]
 
-\lipsum[1] % generates dummy text. Replace \lipsum commands with your own text
+\begin{multicols*}{2}
 
 \section{Rules}
+    \lipsum[4]
 
-\lipsum[2-4]
+\subsection*{Specific Rules}
+    \lipsum[5]
 
 \section{Monsters}
+    \lipsum[6-8]
 
-\lipsum[5-7]
+\subsection*{Specific Monsters}
+\colbox{
+    \lipsum[7]
+}
+
+\subsubsection*{Monster Abilities}
+
+% see https://en.wikibooks.org/wiki/LaTeX/Special_Characters#Other_symbols for
+% a list of "ding" numbers to get other symbols.
+\begin{itemize}
+    \item[\ding{228}] Lorem ipsum dolor sit amet.
+    \item[\ding{228}] Lorem ipsum dolor sit amet.
+    \item[\ding{228}] Lorem ipsum dolor sit amet.
+    \item[\ding{228}] Lorem ipsum dolor sit amet.
+    \item[\ding{228}] Lorem ipsum dolor sit amet.
+\end{itemize}
+
+\end{multicols*}
 
 \section{Adventures}
+\lipsum[9]
+\begin{table}[ht]
+    \centering
+    \rowcolors{2}{gray!25}{white}
+    \begin{tabular}{|c|p{14.5cm}|}
+        \hline
+        \textbf{Roll d6} & \textbf{Random Adventure} \\
+        \hline
+        \hline
+        1 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
+        2 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
+        3 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
+        4 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
+        5 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
+        6 & Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\
+        \hline
+    \end{tabular}
+    \caption{Random Table -- Advenures}
+\end{table}
 
-\lipsum[8-10]
+\colbox{
+    \lipsum[10]
+}
 
-\end{multicols}
+
+\begin{center}
+    \textbf{The End}
+\end{center}
+
+\newpage
+\section*{\centering Appendix}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\vspace{0.4cm}
+
+\subsection{\centering Some random table for random events}
+\begin{table}[!htbp]
+    \centering
+    \rowcolors{2}{gray!25}{white}
+    \begin{tabular}{|c|p{14.5cm}|}
+        \hline
+        \textbf{Roll d12} & \textbf{Random Appendix Table} \\
+        \hline
+        \hline
+        1 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        2 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        3 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        4 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        5 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        6 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        7 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        8 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        9 &   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        10 &  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        11 &  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        12 &  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\\
+        \hline
+    \end{tabular}
+    \label{tab:monster-descriptions}
+\end{table}
 
 \end{document}
+
 
