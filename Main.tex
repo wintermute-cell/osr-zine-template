@@ -1,5 +1,16 @@
 % ltex: language=en-US
+
+% NOTE:
+%   To modify the overall styling/formatting, make changes to zine.cls
+%
 \documentclass{zine} 
+
+\usepackage{lipsum} % For generating dummy text. Remove in your document
+
+% NOTE:
+%   The zine.cls document class already includes a number of packages.
+%   You can check the zine.cls file to see what is already included.
+%
 
 % TITLE
 \author{\textit{Written by YOURNAME}}
@@ -20,6 +31,9 @@
 \section{Introduction}
     \lipsum[2]
 
+% NOTE:
+%   To modify the overall styling/formatting, make changes to zine.cls
+%
 \begin{multicols*}{2}
 
 \section{Rules}
@@ -38,14 +52,17 @@
 
 \subsubsection*{Monster Abilities}
 
-% see https://en.wikibooks.org/wiki/LaTeX/Special_Characters#Other_symbols for
-% a list of "ding" numbers to get other symbols.
+% NOTE:
+%   \ding{<number>} can be used to draw different enumeration symbols.
+%   See https://en.wikibooks.org/wiki/LaTeX/Special_Characters#Other_symbols
+%   for a list of "ding" numbers to get other symbols.
+%
 \begin{itemize}
     \item Lorem ipsum dolor sit amet.
-    \item Lorem ipsum dolor sit amet.
-    \item Lorem ipsum dolor sit amet.
-    \item Lorem ipsum dolor sit amet.
-    \item Lorem ipsum dolor sit amet.
+    \item[\ding{51}] Lorem ipsum dolor sit amet.
+    \item[\ding{61}] Lorem ipsum dolor sit amet.
+    \item[\ding{86}] Lorem ipsum dolor sit amet.
+    \item[\ding{108}] Lorem ipsum dolor sit amet.
 \end{itemize}
 
 \end{multicols*}

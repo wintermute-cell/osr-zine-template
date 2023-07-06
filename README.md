@@ -46,16 +46,17 @@ compiling.
 2. Open the `Main.tex` file in your preferred LaTeX editor.
 3. Replace the contents with your own.
 5. Compile the `.tex` file.
+6. (Optional: You can modify all the formatting/styling in `zine.cls`.)
 
 All the formatting is taken from zine.cls.
 
-## Submodule Usage
+## (Advanced) Submodule Usage
 
-To place the style file in another repository, add it as a submodule:
+You can include this template/style in an existing repository as a submodule:
 
 `git submodule add https://github.com/wintermute-cell/osr-zine-template.git`
 
-Then copy over `Main.tex`, while updating the class's full path:
+You must then copy over `Main.tex`, while updating the class's full path:
 
 `cp osr-zine-template/Main.tex .`
 

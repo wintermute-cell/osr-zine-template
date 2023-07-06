@@ -12,7 +12,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage{lipsum} % For generating dummy text. Remove in your document
 \usepackage{fancyhdr}
 \usepackage{multicol}
 \usepackage{geometry}
@@ -42,10 +41,17 @@
     footskip=0.9cm % Space for the page number
 }
 
-\setlist[itemize]{topsep=0pt,itemsep=0.1cm,partopsep=1ex,parsep=1ex}
-\setlist[itemize]{leftmargin=0.78cm} % you might have to adjust this based on 
-\setlist[itemize,1]{label=\ding{228}}
-                                     % the chosen symbol
+
+\setlist[itemize]{  % list spacings
+            topsep=0pt,
+            itemsep=0.1cm,
+            partopsep=1ex,
+            parsep=1ex
+        }
+\setlist[itemize]{leftmargin=0.78cm} % this adjusts the left margin on lists, 
+                                     % you might have to adjust this based on 
+                                     % the chosen symbol.
+\setlist[itemize,1]{label=\ding{228}} % sets the default list symbol
 
 % you can adjust the properties of an individual itemize like this:
 % \begin{itemize}[leftmargin=5.5mm]
